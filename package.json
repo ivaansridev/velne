@@ -1,18 +1,17 @@
 {
-  "name": "velne-mono",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
-  "scripts": {
-  },
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^7"
-  },
-  "workspaces": [
-    "site",
-    "lib"
-  ]
+    "name": "velne-mono",
+    "module": "index.ts",
+    "type": "module",
+    "private": true,
+    "scripts": {},
+    "devDependencies": {
+        "@types/bun": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^7"
+    },
+    "workspaces": [
+        "site",
+        "lib"
+    ]
 }

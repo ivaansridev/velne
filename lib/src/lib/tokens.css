@@ -1,6 +1,17 @@
 /* Velne tokens */
 :root {
-    --vn-radius:                                 2px;
-    --vn-radius-med:      calc(var(--vn-radius) * 2);
+    --vn-accent: #e0b040;
+
+    --vn-bg: #1a1a1a;
+    --vn-bg-tint: #1e1e1e;
+
+    --vn-font-color: white;
+    --vn-accent-font-color: white;
+    --vn-font:
+        -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial,
+        sans-serif;
+
+    --vn-radius: 4px;
+    --vn-radius-med: calc(var(--vn-radius) * 2);
     --vn-radius-high: calc(var(--vn-radius-med) * 2);
 }
