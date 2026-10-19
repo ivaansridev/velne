@@ -1,0 +1,6 @@
+/* Velne tokens */
+:root {
+    --vn-radius:                                 2px;
+    --vn-radius-med:      calc(var(--vn-radius) * 2);
+    --vn-radius-high: calc(var(--vn-radius-med) * 2);
+}
