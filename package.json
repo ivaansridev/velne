@@ -3,15 +3,36 @@
     "module": "index.ts",
     "type": "module",
     "private": true,
-    "scripts": {},
-    "devDependencies": {
-        "@types/bun": "latest"
-    },
-    "peerDependencies": {
-        "typescript": "^7"
-    },
     "workspaces": [
         "site",
         "lib"
-    ]
+    ],
+    "scripts": {
+        "dev": "bun run --cwd site dev",
+        "lint": "eslint .",
+        "fmt": "prettier -w ."
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/bun": "latest",
+        "eslint": "^10.13.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-svelte": "^3.23.1",
+        "globals": "^17.13.0",
+        "prettier": "^3.9.10",
+        "prettier-plugin-svelte": "^4.1.1",
+        "typescript": "6.0.3",
+        "typescript-eslint": "^8.72.0"
+    },
+    "prettier": {
+        "useTabs": false,
+        "tabWidth": 4,
+        "semi": true,
+        "singleQuote": true,
+        "printWidth": 100,
+        "trailingComma": "all",
+        "plugins": [
+            "prettier-plugin-svelte"
+        ]
+    }
 }
