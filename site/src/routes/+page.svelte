@@ -1,5 +1,5 @@
 <script lang="ts">
-    import * as vn from '@velne/lib';
+    import * as vn from 'velne-lib';
 
     let enabled = $state(false);
     let modalOpen = $state(false);
@@ -43,7 +43,7 @@
         {/snippet}
 
         <p style="margin: 0">
-            This is an example modal rendered by <code>@velne/lib</code>. Press <kbd>Esc</kbd>,
+            This is an example modal rendered by <code>velne-lib</code>. Press <kbd>Esc</kbd>,
             click the backdrop, or use the buttons below to close it.
         </p>
 

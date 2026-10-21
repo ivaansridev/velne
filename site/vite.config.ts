@@ -21,11 +21,11 @@ export default defineConfig({
     resolve: {
         alias: [
             {
-                find: /^@velne\/lib$/,
+                find: /^velne-lib$/,
                 replacement: fileURLToPath(new URL('../lib/src/lib/index.ts', import.meta.url)),
             },
             {
-                find: /^@velne\/lib\//,
+                find: /^velne-lib\//,
                 replacement: fileURLToPath(new URL('../lib/src/lib/', import.meta.url)),
             },
         ],

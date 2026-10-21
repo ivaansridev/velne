@@ -1,5 +1,5 @@
 <script lang="ts">
-    import '@velne/lib/tokens.css';
+    import 'velne-lib/tokens.css';
     import type { LayoutProps } from './$types';
 
     let { children }: LayoutProps = $props();

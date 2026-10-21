@@ -25,6 +25,6 @@
         "#lib/*": "./src/lib/*"
     },
     "dependencies": {
-        "@velne/lib": "workspace:*"
+        "velne-lib": "workspace:*"
     }
 }
