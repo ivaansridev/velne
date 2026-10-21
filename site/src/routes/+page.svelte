@@ -2,6 +2,7 @@
 	import * as vn from '@velne/lib';
 
 	let enabled = $state(false);
+	let modalOpen = $state(false);
 </script>
 
 <vn.App
@@ -29,4 +30,24 @@
 		<vn.Toggle bind:checked={enabled} />
 		Notifications: {enabled ? 'on' : 'off'}
 	</label>
+
+	<div style="margin-top: 1rem">
+		<vn.Button variant="solid" onclick={() => (modalOpen = true)}>Open modal</vn.Button>
+	</div>
+
+	<vn.Modal bind:open={modalOpen}>
+		{#snippet heading()}
+			Confirm action
+		{/snippet}
+
+		<p style="margin: 0">
+			This is an example modal rendered by <code>@velne/lib</code>. Press <kbd>Esc</kbd>, click the
+			backdrop, or use the buttons below to close it.
+		</p>
+
+		{#snippet footer()}
+			<vn.Button variant="simple" onclick={() => (modalOpen = false)}>Cancel</vn.Button>
+			<vn.Button variant="solid" onclick={() => (modalOpen = false)}>Confirm</vn.Button>
+		{/snippet}
+	</vn.Modal>
 </vn.App>
