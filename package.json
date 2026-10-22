@@ -9,8 +9,10 @@
     ],
     "scripts": {
         "dev": "bun run --cwd site dev",
-        "lint": "eslint .",
-        "fmt": "prettier -w ."
+        "lint": "eslint . && printf 'No bugs found by eslint\\n'",
+        "fmt": "prettier -w .",
+        "bugs": "bun run --silent bugs_",
+        "bugs_": "printf '\\n----- Prettier -----\\n' && bun --silent fmt && printf '\\n----- Type checking -----\\n' ; bun --silent check ; printf '\\n----- Lint -----\\n' && bun --silent lint"
     },
     "devDependencies": {
         "@eslint/js": "^10.0.1",
