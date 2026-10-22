@@ -5,16 +5,16 @@
     let modalOpen = $state(false);
 </script>
 
-<div class="demo">
-    <vn.Navbar blur>
-        <h1>velne-lib</h1>
+<vn.Navbar position="sticky" blur>
+    <h1>velne-lib</h1>
 
-        {#snippet right()}
-            <vn.Button variant="simple">Docs</vn.Button>
-            <vn.Button variant="solid">Sign in</vn.Button>
-        {/snippet}
-    </vn.Navbar>
+    {#snippet right()}
+        <vn.Button variant="simple">Docs</vn.Button>
+        <vn.Button variant="solid">Sign in</vn.Button>
+    {/snippet}
+</vn.Navbar>
 
+<main class="demo">
     <h1>Welcome to SvelteKit</h1>
     <p>
         Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation
@@ -59,14 +59,16 @@
             <vn.Button variant="solid" onclick={() => (modalOpen = false)}>Confirm</vn.Button>
         {/snippet}
     </vn.Modal>
-</div>
+</main>
 
 <style>
     .demo {
-        --vn-navbar-height: 60px;
-
         box-sizing: border-box;
         min-height: 100vh;
-        padding: calc(var(--vn-navbar-height) + 1rem) 1rem 1rem;
+        padding: 0 1rem 1rem;
+    }
+
+    .demo > :first-child {
+        margin-top: 0;
     }
 </style>
