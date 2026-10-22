@@ -16,32 +16,35 @@
         -webkit-appearance: none;
         position: relative;
         display: inline-block;
-        width: 52px;
-        height: 32px;
+        width: var(--vn-toggle-width, 52px);
+        height: var(--vn-toggle-height, 32px);
         border-radius: var(--vn-radius);
-        background: color-mix(in srgb, var(--vn-font-color) 30%, transparent);
-        border: 2px solid color-mix(in srgb, var(--vn-font-color) 40%, transparent);
+        background: var(--vn-toggle-bg, color-mix(in srgb, var(--vn-font-color) 30%, transparent));
+        border: var(
+            --vn-toggle-border,
+            2px solid color-mix(in srgb, var(--vn-font-color) 40%, transparent)
+        );
         cursor: pointer;
         vertical-align: middle;
         transition:
-            background-color var(--vn-dur, 120ms) ease,
-            border-color var(--vn-dur, 120ms) ease;
+            background-color var(--vn-toggle-duration, 120ms) ease,
+            border-color var(--vn-toggle-duration, 120ms) ease;
     }
 
     .vn-toggle::before {
         content: '';
         position: absolute;
-        top: 50%;
-        left: 5px;
-        transform: translateY(-50%);
-        width: 16px;
-        height: 16px;
+        top: var(--vn-toggle-knob-top, 50%);
+        left: var(--vn-toggle-knob-left, 5px);
+        transform: var(--vn-toggle-knob-transform, translateY(-50%));
+        width: var(--vn-toggle-knob-width, 16px);
+        height: var(--vn-toggle-knob-height, 16px);
         border-radius: var(--vn-radius);
         background: var(--vn-font-color);
         transition:
-            left var(--vn-dur, 120ms) cubic-bezier(0.35, 0, 0.25, 1),
-            width var(--vn-dur, 120ms) ease,
-            height var(--vn-dur, 120ms) ease;
+            left var(--vn-toggle-duration, 120ms) cubic-bezier(0.35, 0, 0.25, 1),
+            width var(--vn-toggle-duration, 120ms) ease,
+            height var(--vn-toggle-duration, 120ms) ease;
     }
 
     .vn-toggle:checked {
@@ -50,30 +53,33 @@
     }
 
     .vn-toggle:checked::before {
-        left: 25px;
-        width: 20px;
-        height: 20px;
+        left: var(--vn-toggle-checked-knob-left, 25px);
+        width: var(--vn-toggle-checked-knob-width, 20px);
+        height: var(--vn-toggle-checked-knob-height, 20px);
         /* colour of the knob when it sits on the accent fill */
         background: var(--vn-accent-font-color, white);
     }
 
     /* both states squash to the same 25px so the effect is consistent */
     .vn-toggle:active::before {
-        width: 25px;
+        width: var(--vn-toggle-active-knob-width, 25px);
     }
 
     .vn-toggle:checked:active::before {
-        left: 20px;
-        width: 25px;
+        left: var(--vn-toggle-checked-active-knob-left, 20px);
+        width: var(--vn-toggle-checked-active-knob-width, 25px);
     }
 
     .vn-toggle:disabled {
-        opacity: 0.35;
+        opacity: var(--vn-toggle-disabled-opacity, 0.35);
         cursor: not-allowed;
     }
 
     .vn-toggle:focus-visible {
-        outline: 3px solid color-mix(in srgb, var(--vn-accent) 40%, transparent);
-        outline-offset: 2px;
+        outline: var(
+            --vn-toggle-focus-outline,
+            3px solid color-mix(in srgb, var(--vn-accent) 40%, transparent)
+        );
+        outline-offset: var(--vn-toggle-focus-outline-offset, 2px);
     }
 </style>

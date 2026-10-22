@@ -270,33 +270,33 @@
     .vn-tooltip-bubble {
         position: fixed;
         z-index: 1000;
-        padding: 6px 10px;
-        font-size: 13px;
-        font-weight: 500;
-        line-height: 1.4;
-        white-space: normal;
-        max-width: min(280px, calc(100vw - 16px));
+        padding: var(--vn-tooltip-bubble-padding, 6px 10px);
+        font-size: var(--vn-tooltip-bubble-font-size, 13px);
+        font-weight: var(--vn-tooltip-bubble-font-weight, 500);
+        line-height: var(--vn-tooltip-bubble-line-height, 1.4);
+        white-space: var(--vn-tooltip-bubble-white-space, normal);
+        max-width: var(--vn-tooltip-bubble-max-width, min(280px, calc(100vw - 16px)));
         text-align: left;
         color: var(--vn-font-color);
         background: var(--vn-bg-tint);
         border-radius: var(--vn-radius);
-        box-shadow: 0 6px 16px rgb(0 0 0 / 35%);
+        box-shadow: var(--vn-tooltip-bubble-box-shadow, 0 6px 16px rgb(0 0 0 / 35%));
         pointer-events: none;
         visibility: hidden;
-        opacity: 0;
+        opacity: var(--vn-tooltip-bubble-opacity, 0);
     }
 
     /* No appear animation — it shows instantly. */
     .vn-tooltip-bubble.open {
         visibility: visible;
-        opacity: 1;
+        opacity: var(--vn-tooltip-bubble-open-opacity, 1);
     }
 
     .vn-tooltip-arrow {
         position: absolute;
-        width: 8px;
-        height: 8px;
+        width: var(--vn-tooltip-arrow-width, 8px);
+        height: var(--vn-tooltip-arrow-height, 8px);
         background: var(--vn-bg-tint);
-        transform: rotate(45deg);
+        transform: var(--vn-tooltip-arrow-transform, rotate(45deg));
     }
 </style>

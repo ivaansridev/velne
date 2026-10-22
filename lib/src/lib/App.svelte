@@ -20,9 +20,9 @@
         inset: 0;
         display: flex;
         flex-direction: column;
-        min-height: 0;
-        overflow: hidden;
-        overscroll-behavior: none;
+        min-height: var(--vn-app-min-height, 0);
+        overflow: var(--vn-app-overflow, hidden);
+        overscroll-behavior: var(--vn-app-overscroll-behavior, none);
         padding: var(--vn-app-padding, 0);
         background-color: var(--vn-bg);
         color: var(--vn-font-color);

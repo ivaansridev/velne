@@ -119,14 +119,14 @@
     }
 
     /**
-     * Motion length from --vn-dur, so the JS transitions honour the same token.
-     * Returns 0 when the user prefers reduced motion.
+     * Motion length from --vn-modal-duration, so the JS transitions honour the
+     * same token. Returns 0 when the user prefers reduced motion.
      */
     function motionDuration(node: Element, fallback: number): number {
         const view = node.ownerDocument?.defaultView;
         if (!view) return fallback;
         if (view.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return 0;
-        const value = cssTime(view.getComputedStyle(node).getPropertyValue('--vn-dur'));
+        const value = cssTime(view.getComputedStyle(node).getPropertyValue('--vn-modal-duration'));
         return value !== null && value >= 0 ? value : fallback;
     }
 
@@ -319,7 +319,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--vn-modal-overlay, rgb(0 0 0 / 55%));
+        background: var(--vn-bg-tint, rgb(0 0 0 / 55%));
     }
 
     .vn-modal-overlay-left {
@@ -346,86 +346,103 @@
         position: absolute;
         inset: 0;
         z-index: 0;
-        margin: 0;
-        padding: 0;
-        border: none;
-        background: transparent;
+        margin: var(--vn-modal-backdrop-margin, 0);
+        padding: var(--vn-modal-backdrop-padding, 0);
+        border: var(--vn-modal-backdrop-border, none);
+        background: var(--vn-modal-backdrop-bg, transparent);
         cursor: default;
     }
 
     .vn-modal {
         position: relative;
         z-index: 1;
-        width: min(480px, calc(100% - 32px));
-        max-height: 80vh;
+        width: var(--vn-modal-width, min(480px, calc(100% - 32px)));
+        max-height: var(--vn-modal-max-height, 80vh);
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        overflow: var(--vn-modal-overflow, hidden);
         background: var(--vn-bg-tint);
         color: var(--vn-font-color);
         border-radius: var(--vn-radius-med);
-        box-shadow: 0 16px 40px rgb(0 0 0 / 45%);
+        box-shadow: var(--vn-modal-box-shadow, 0 16px 40px rgb(0 0 0 / 45%));
     }
 
     /* Side sheets: full height, anchored to their edge. */
-    .vn-modal-left,
-    .vn-modal-right {
-        width: min(360px, 85vw);
-        height: 100%;
-        max-height: 100vh;
-    }
-
     .vn-modal-left {
-        border-radius: 0 var(--vn-radius-med) var(--vn-radius-med) 0;
+        width: var(--vn-modal-left-width, min(360px, 85vw));
+        height: var(--vn-modal-left-height, 100%);
+        max-height: var(--vn-modal-left-max-height, 100vh);
+        border-radius: var(
+            --vn-modal-left-border-radius,
+            0 var(--vn-radius-med) var(--vn-radius-med) 0
+        );
     }
 
     .vn-modal-right {
-        border-radius: var(--vn-radius-med) 0 0 var(--vn-radius-med);
+        width: var(--vn-modal-right-width, min(360px, 85vw));
+        height: var(--vn-modal-right-height, 100%);
+        max-height: var(--vn-modal-right-max-height, 100vh);
+        border-radius: var(
+            --vn-modal-right-border-radius,
+            var(--vn-radius-med) 0 0 var(--vn-radius-med)
+        );
     }
 
     /* Edge sheets: full width, anchored to the top/bottom edge, tall enough to
      scroll long menus before they grow off screen. */
     .vn-modal-bottom {
-        width: 100%;
-        max-width: 560px;
-        max-height: 85vh;
-        border-radius: var(--vn-radius-high) var(--vn-radius-high) 0 0;
+        width: var(--vn-modal-bottom-width, 100%);
+        max-width: var(--vn-modal-bottom-max-width, 560px);
+        max-height: var(--vn-modal-bottom-max-height, 85vh);
+        border-radius: var(
+            --vn-modal-bottom-border-radius,
+            var(--vn-radius-high) var(--vn-radius-high) 0 0
+        );
     }
 
     .vn-modal-top {
-        width: 100%;
-        max-width: 560px;
-        max-height: 85vh;
-        border-radius: 0 0 var(--vn-radius-high) var(--vn-radius-high);
+        width: var(--vn-modal-top-width, 100%);
+        max-width: var(--vn-modal-top-max-width, 560px);
+        max-height: var(--vn-modal-top-max-height, 85vh);
+        border-radius: var(
+            --vn-modal-top-border-radius,
+            0 0 var(--vn-radius-high) var(--vn-radius-high)
+        );
     }
 
     .vn-modal-heading {
-        padding: 20px 24px 12px;
-        font-size: 18px;
-        font-weight: 700;
-        border-bottom: 1px solid color-mix(in srgb, var(--vn-font-color) 12%, transparent);
+        padding: var(--vn-modal-heading-padding, 20px 24px 12px);
+        font-size: var(--vn-modal-heading-font-size, 18px);
+        font-weight: var(--vn-modal-heading-font-weight, 700);
+        border-bottom: var(
+            --vn-modal-heading-border-bottom,
+            1px solid color-mix(in srgb, var(--vn-font-color) 12%, transparent)
+        );
     }
 
     .vn-modal-body {
-        padding: 20px 24px;
-        overflow-y: auto;
-        overscroll-behavior: contain;
-        font-size: 14px;
-        line-height: 1.5;
+        padding: var(--vn-modal-body-padding, 20px 24px);
+        overflow-y: var(--vn-modal-body-overflow-y, auto);
+        overscroll-behavior: var(--vn-modal-body-overscroll-behavior, contain);
+        font-size: var(--vn-modal-body-font-size, 14px);
+        line-height: var(--vn-modal-body-line-height, 1.5);
     }
 
     /* With a heading, its divider is the midpoint: 12px above and below. */
     .vn-modal-heading + .vn-modal-body {
-        padding-top: 12px;
+        padding-top: var(--vn-modal-body-heading-padding-top, 12px);
     }
 
     .vn-modal-footer {
         display: flex;
         align-items: stretch;
         /* a hairline seam between adjacent buttons */
-        gap: 1px;
-        padding: 0;
-        border-top: 1px solid color-mix(in srgb, var(--vn-font-color) 12%, transparent);
+        gap: var(--vn-modal-footer-gap, 1px);
+        padding: var(--vn-modal-footer-padding, 0);
+        border-top: var(
+            --vn-modal-footer-border-top,
+            1px solid color-mix(in srgb, var(--vn-font-color) 12%, transparent)
+        );
         flex-shrink: 0;
     }
 
@@ -437,17 +454,17 @@
    */
     .vn-modal-footer > :global(.vn-button) {
         flex: 1 1 0;
-        margin: 0;
-        border-radius: 0;
+        margin: var(--vn-modal-footer-button-margin, 0);
+        border-radius: var(--vn-modal-footer-button-border-radius, 0);
     }
 
     /* Fullscreen wins over any edge sizing (declared last so it overrides). */
     .vn-modal-full {
-        width: 100%;
-        height: 100%;
-        max-width: none;
-        max-height: none;
-        border-radius: 0;
+        width: var(--vn-modal-full-width, 100%);
+        height: var(--vn-modal-full-height, 100%);
+        max-width: var(--vn-modal-full-max-width, none);
+        max-height: var(--vn-modal-full-max-height, none);
+        border-radius: var(--vn-modal-full-border-radius, 0);
         background: var(--vn-bg-tint);
     }
 </style>
