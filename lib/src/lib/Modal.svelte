@@ -363,6 +363,7 @@
         overflow: var(--vn-modal-overflow, hidden);
         background: var(--vn-bg-tint);
         color: var(--vn-font-color);
+        font-family: var(--vn-modal-font-family, var(--vn-font));
         border-radius: var(--vn-radius-med);
         box-shadow: var(--vn-modal-box-shadow, 0 16px 40px rgb(0 0 0 / 45%));
     }

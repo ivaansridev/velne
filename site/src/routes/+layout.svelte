@@ -10,3 +10,14 @@
 </svelte:head>
 
 {@render children()}
+
+<style>
+    :global(html),
+    :global(body) {
+        margin: 0;
+        min-height: 100%;
+        background: var(--vn-bg);
+        color: var(--vn-font-color);
+        font-family: var(--vn-font);
+    }
+</style>

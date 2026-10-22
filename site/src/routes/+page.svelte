@@ -5,9 +5,16 @@
     let modalOpen = $state(false);
 </script>
 
-<vn.App
-    style="--vn-app-padding: 1rem; background: var(--vn-bg); color: var(--vn-font-color); font-family: var(--vn-font)"
->
+<div class="demo">
+    <vn.Navbar blur>
+        <h1>velne-lib</h1>
+
+        {#snippet right()}
+            <vn.Button variant="simple">Docs</vn.Button>
+            <vn.Button variant="solid">Sign in</vn.Button>
+        {/snippet}
+    </vn.Navbar>
+
     <h1>Welcome to SvelteKit</h1>
     <p>
         Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation
@@ -43,8 +50,8 @@
         {/snippet}
 
         <p style="margin: 0">
-            This is an example modal rendered by <code>velne-lib</code>. Press <kbd>Esc</kbd>,
-            click the backdrop, or use the buttons below to close it.
+            This is an example modal rendered by <code>velne-lib</code>. Press <kbd>Esc</kbd>, click
+            the backdrop, or use the buttons below to close it.
         </p>
 
         {#snippet footer()}
@@ -52,4 +59,14 @@
             <vn.Button variant="solid" onclick={() => (modalOpen = false)}>Confirm</vn.Button>
         {/snippet}
     </vn.Modal>
-</vn.App>
+</div>
+
+<style>
+    .demo {
+        --vn-navbar-height: 60px;
+
+        box-sizing: border-box;
+        min-height: 100vh;
+        padding: calc(var(--vn-navbar-height) + 1rem) 1rem 1rem;
+    }
+</style>

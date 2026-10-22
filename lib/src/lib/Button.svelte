@@ -28,6 +28,7 @@
         background: var(--vn-button-bg, transparent);
         color: inherit;
         font: inherit;
+        font-family: var(--vn-button-font-family, var(--vn-font));
         line-height: var(--vn-button-line-height, 1.2);
         cursor: pointer;
         transition:

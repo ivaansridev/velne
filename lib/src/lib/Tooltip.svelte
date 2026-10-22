@@ -273,6 +273,7 @@
         padding: var(--vn-tooltip-bubble-padding, 6px 10px);
         font-size: var(--vn-tooltip-bubble-font-size, 13px);
         font-weight: var(--vn-tooltip-bubble-font-weight, 500);
+        font-family: var(--vn-tooltip-bubble-font-family, var(--vn-font));
         line-height: var(--vn-tooltip-bubble-line-height, 1.4);
         white-space: var(--vn-tooltip-bubble-white-space, normal);
         max-width: var(--vn-tooltip-bubble-max-width, min(280px, calc(100vw - 16px)));
