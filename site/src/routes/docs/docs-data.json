@@ -1,0 +1,84 @@
+[
+    {
+        "name": "Button",
+        "component": "Button",
+        "blurb": "A button with simple, solid, tonal, and outlined variants.",
+        "base": "<button>",
+        "example": "<vn.Button variant=\"solid\">Save changes</vn.Button>",
+        "attributes": {
+            "variant": ["simple", "solid", "tonal", "outlined"],
+            "children": ["Snippet"]
+        }
+    },
+    {
+        "name": "A",
+        "component": "A",
+        "blurb": "An inline link that can also render as a button with an external-link icon.",
+        "base": "<a>",
+        "example": "<vn.A href=\"https://svelte.dev\" variant=\"btn-solid\">Open Svelte</vn.A>",
+        "attributes": {
+            "variant": [
+                "link",
+                "accent-link",
+                "btn-solid",
+                "btn-tonal",
+                "btn-outlined",
+                "btn-simple"
+            ],
+            "children": ["Snippet"]
+        }
+    },
+    {
+        "name": "Navbar",
+        "component": "Navbar",
+        "blurb": "A navigation bar that can be fixed, sticky, or static.",
+        "base": "<nav>",
+        "example": "<vn.Navbar position=\"sticky\" blur><h1>My app</h1></vn.Navbar>",
+        "attributes": {
+            "position": ["fixed", "sticky", "static"],
+            "blur": false,
+            "children": ["Snippet"],
+            "right": ["Snippet"]
+        }
+    },
+    {
+        "name": "Toggle",
+        "component": "Toggle",
+        "blurb": "A checkbox styled as a toggle switch.",
+        "base": "<input type=\"checkbox\">",
+        "example": "<vn.Toggle bind:checked={enabled} />",
+        "attributes": {
+            "checked": false
+        }
+    },
+    {
+        "name": "Tooltip",
+        "component": "Tooltip",
+        "blurb": "A tooltip that follows the pointer and stays inside the viewport.",
+        "base": "<span>",
+        "example": "<vn.Tooltip content=\"Open settings\"><vn.Button>Settings</vn.Button></vn.Tooltip>",
+        "attributes": {
+            "content": ["string"],
+            "position": ["auto", "top", "bottom", "left", "right"],
+            "children": ["Snippet"]
+        }
+    },
+    {
+        "name": "Modal",
+        "component": "Modal",
+        "blurb": "An accessible dialog with centered and edge-sheet layouts.",
+        "base": "<div>",
+        "example": "<vn.Button variant=\"solid\" onclick={() => (open = true)}>Open modal</vn.Button>\n\n<vn.Modal bind:open={open}>\n    {#snippet heading()}Settings{/snippet}\n    <p>Update your notification preferences.</p>\n    {#snippet footer()}\n        <vn.Button variant=\"simple\" onclick={() => (open = false)}>Cancel</vn.Button>\n        <vn.Button variant=\"solid\" onclick={() => (open = false)}>Save changes</vn.Button>\n    {/snippet}\n</vn.Modal>",
+        "attributes": {
+            "open": false,
+            "variant": ["default", "fullscreen"],
+            "side": ["center", "left", "right", "top", "bottom"],
+            "id": ["string"],
+            "label": ["string"],
+            "heading": ["Snippet"],
+            "children": ["Snippet"],
+            "footer": ["Snippet"],
+            "onclose": ["function"]
+        }
+    }
+]
