@@ -35,6 +35,19 @@
         </vn.Tooltip>
     </div>
 
+    <h2>Links</h2>
+    <p>
+        Inline links: <vn.A href="https://svelte.dev">default</vn.A> and
+        <vn.A href="https://svelte.dev" variant="accent-link">accent</vn.A>.
+    </p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center">
+        <vn.A href="https://svelte.dev/docs/kit" variant="btn-solid">Solid link</vn.A>
+        <vn.A href="https://svelte.dev/docs/kit" variant="btn-simple">Simple link</vn.A>
+        <vn.A href="https://svelte.dev/docs/kit" variant="btn-tonal">Tonal link</vn.A>
+        <vn.A href="https://svelte.dev/docs/kit" variant="btn-outlined">Outlined link</vn.A>
+    </div>
+
     <label style="display: flex; align-items: center; gap: 0.5rem; width: fit-content">
         <vn.Toggle bind:checked={enabled} />
         Notifications: {enabled ? 'on' : 'off'}
