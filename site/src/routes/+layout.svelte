@@ -18,6 +18,23 @@
         min-height: 100%;
         background: var(--vn-bg);
         color: var(--vn-font-color);
+        color-scheme: dark;
         font-family: var(--vn-font);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    :global(html) {
+        scroll-behavior: smooth;
+    }
+
+    :global(::selection) {
+        background: var(--vn-accent);
+        color: var(--vn-bg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        :global(html) {
+            scroll-behavior: auto;
+        }
     }
 </style>
