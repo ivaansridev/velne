@@ -19,7 +19,7 @@
     },
     "lib": {
       "name": "velne-lib",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "dependencies": {
         "@lucide/svelte": "^1.61.0",
       },
@@ -40,7 +40,7 @@
     },
     "site": {
       "name": "site",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "velne-lib": "workspace:*",
       },

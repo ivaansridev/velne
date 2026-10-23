@@ -123,7 +123,8 @@ import 'velne-lib/tokens.css';
             variant="btn-simple"
             href="https://github.com/ivaansridev/velne"
             target="_blank"
-            rel="noopener noreferrer">GitHub</vn.A>
+            rel="noopener noreferrer">GitHub</vn.A
+        >
         <vn.A variant="btn-solid" href={resolve('/docs')}>Get started</vn.A>
     {/snippet}
 </vn.Navbar>
