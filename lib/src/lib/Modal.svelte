@@ -319,7 +319,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--vn-bg-tint, rgb(0 0 0 / 55%));
+        background: var(--vn-modal-backdrop-bg, rgb(0 0 0 / 55%));
     }
 
     .vn-modal-overlay-left {
