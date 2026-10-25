@@ -329,18 +329,6 @@ import 'velne-lib/tokens.css';
         border-radius: 6px;
     }
 
-    .nav-link {
-        color: inherit;
-        font-size: 14px;
-        text-decoration: none;
-        opacity: 0.68;
-        transition: opacity 120ms ease;
-    }
-
-    .nav-link:hover {
-        opacity: 1;
-    }
-
     .hero {
         position: relative;
         display: grid;
@@ -778,10 +766,6 @@ import 'velne-lib/tokens.css';
     @media (max-width: 620px) {
         .page {
             padding-inline: 1rem;
-        }
-
-        .nav-link {
-            display: none;
         }
 
         .hero h1 {
